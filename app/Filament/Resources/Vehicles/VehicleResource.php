@@ -13,8 +13,6 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
-use Filament\Forms;
-use Filament\Forms\Form;
 
 class VehicleResource extends Resource
 {
@@ -47,6 +45,5 @@ class VehicleResource extends Resource
             'edit' => EditVehicle::route('/{record}/edit'),
         ];
     }
-
     
 }
