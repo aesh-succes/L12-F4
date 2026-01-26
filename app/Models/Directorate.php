@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Directorate extends Model
 {
-    protected $fillable = ['name'];
+    protected $fillable = [
+    'name',
+    'phone_number_1',
+    'phone_number_2',
+];
+
 
     public function vehicles()
     {

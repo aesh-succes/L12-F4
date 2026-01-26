@@ -15,6 +15,10 @@ class DirectorateForm
                     ->required(),
                 TextInput::make('city_id')
                     ->numeric(),
+                    TextInput::make('phone_number_1')
+                    ->numeric(),
+                    TextInput::make('phone_number_2')
+                    ->numeric(),
             ]);
     }
 }

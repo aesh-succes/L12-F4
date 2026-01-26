@@ -19,6 +19,12 @@ class DirectoratesTable
                 TextColumn::make('city_id')
                     ->numeric()
                     ->sortable(),
+                     TextColumn::make('phone_number_1')
+                    ->numeric()
+                    ->sortable(),
+                     TextColumn::make('phone_number_2')
+                    ->numeric()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
