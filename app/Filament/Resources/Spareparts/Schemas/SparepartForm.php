@@ -12,8 +12,10 @@ class SparepartForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Suku Cadang')
                     ->required(),
                 TextInput::make('price')
+                    ->label('Harga')
                     ->required()
                     ->numeric()
                     ->prefix('$'),

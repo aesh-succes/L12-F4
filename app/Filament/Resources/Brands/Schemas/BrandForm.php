@@ -12,6 +12,7 @@ class BrandForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Merk Kendaraan')
                     ->required(),
             ]);
     }

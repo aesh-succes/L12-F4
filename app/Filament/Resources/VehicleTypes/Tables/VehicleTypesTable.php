@@ -17,10 +17,12 @@ class VehicleTypesTable
             ->emptyStateHeading('Belum ada data jenis kendaraan')
             ->columns([
                 TextColumn::make('name')
+                    ->label('Jenis Kendaraan')
                     ->searchable()
                     ->sortable(),
 
                 IconColumn::make('is_active')
+                    ->label('Aktif')
                     ->boolean(),
 
                 TextColumn::make('created_at')

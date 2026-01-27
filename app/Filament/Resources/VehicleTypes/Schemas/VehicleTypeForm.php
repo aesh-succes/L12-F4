@@ -13,10 +13,12 @@ class VehicleTypeForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Jenis Kendaraan')
                     ->required()
                     ->maxLength(255),
 
                 Toggle::make('is_active')
+                    ->label('Aktif')
                     ->required(),
             ]);
     }

@@ -16,8 +16,10 @@ class SparepartsTable
             ->emptyStateHeading('Belum ada data suku cadang')
             ->columns([
                 TextColumn::make('name')
+                    ->label('Suku Cadang')
                     ->searchable(),
                 TextColumn::make('price')
+                    ->label('Harga')
                     ->money()
                     ->sortable(),
                 TextColumn::make('created_at')

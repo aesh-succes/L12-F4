@@ -16,6 +16,7 @@ class ModulesTable
             ->emptyStateHeading('Belum ada data modul')
             ->columns([
                 TextColumn::make('name')
+                    ->label('Modul Nama')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

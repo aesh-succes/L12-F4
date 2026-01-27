@@ -10,4 +10,6 @@ class CreateBrand extends CreateRecord
     protected static string $resource = BrandResource::class;
 
      protected static ?string $title = 'Tambah Merk Kendaraan';
+
+     
 }

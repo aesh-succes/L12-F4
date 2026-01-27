@@ -17,6 +17,7 @@ class CostTypesTable
             ->emptyStateDescription('Silakan tambahkan jenis biaya terlebih dahulu')
             ->columns([
                 TextColumn::make('name')
+                    ->label('Biaya')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

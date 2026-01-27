@@ -20,9 +20,13 @@ class BrandResource extends Resource
 
     protected static ?string $navigationLabel = 'Merk Kendaraan';
 
-    protected static ?string $breadcrumb = 'Merk Kendaraan';
+     protected static ?string $breadcrumb = 'Merk Kendaraan';
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
+    protected static ?string $pluralModelLabel = 'Merk Kendaraan';
+
+    protected static ?string $modelLabel = 'Merk Kendaraan';
+
+        protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

@@ -16,6 +16,7 @@ class PositionsTable
             ->emptyStateHeading('Belum ada data jabatan pekerjaan')
             ->columns([
                 TextColumn::make('name')
+                    ->label('Jabatan')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

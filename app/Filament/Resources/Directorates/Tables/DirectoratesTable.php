@@ -16,14 +16,18 @@ class DirectoratesTable
             ->emptyStateHeading('Belum ada data direktorat')
             ->columns([
                 TextColumn::make('name')
+                    ->label('Direktorat')
                     ->searchable(),
                 TextColumn::make('city_id')
+                    ->label('KotaKab')
                     ->numeric()
                     ->sortable(),
-                     TextColumn::make('phone_number_1')
+                TextColumn::make('phone_number_1')
+                    ->label('Nomor Telepon 1')
                     ->numeric()
                     ->sortable(),
-                     TextColumn::make('phone_number_2')
+                TextColumn::make('phone_number_2')
+                    ->label('Nomor Telepon 2')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('created_at')

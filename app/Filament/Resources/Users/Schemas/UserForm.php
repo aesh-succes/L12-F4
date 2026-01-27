@@ -15,6 +15,7 @@ class UserForm
         return $schema
             ->components([
                 TextInput::make('name')
+                    ->label('Nama')
                     ->required(),
                 TextInput::make('email')
                     ->label('Email address')
@@ -28,7 +29,7 @@ class UserForm
                 ->label('Active')
                 ->default(true),
              FileUpload::make('signature_file')
-                ->label('Signature File')
+                ->label('File TTD')
                 ->directory('signatures')
                 ->acceptedFileTypes(['image/png', 'image/jpeg'])
                 ->image()

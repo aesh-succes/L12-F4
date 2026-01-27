@@ -17,6 +17,7 @@ class UsersTable
             ->emptyStateHeading('Belum ada data pengguna')
             ->columns([
                 TextColumn::make('name')
+                    ->label('Nama')
                     ->searchable(),
                 TextColumn::make('email')
                     ->label('Email address')
