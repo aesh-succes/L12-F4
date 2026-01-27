@@ -21,10 +21,10 @@ class UserResource extends Resource
     protected static ?string $navigationLabel = 'Pengguna';
 
     protected static ?string $breadcrumb = 'Pengguna';
-    
+
     protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedUsers;
 
     protected static ?string $recordTitleAttribute = 'no';
 
