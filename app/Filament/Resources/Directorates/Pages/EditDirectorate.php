@@ -10,10 +10,13 @@ class EditDirectorate extends EditRecord
 {
     protected static string $resource = DirectorateResource::class;
 
+    protected static ?string $title = 'Ubah Direktorat';
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->label('Hapus Direktorat'),
         ];
     }
 }

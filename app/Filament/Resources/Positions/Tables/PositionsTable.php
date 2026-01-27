@@ -13,6 +13,7 @@ class PositionsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->emptyStateHeading('Belum ada data jabatan pekerjaan')
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),

@@ -18,6 +18,10 @@ class CostTypeResource extends Resource
 {
     protected static ?string $model = CostType::class;
 
+     protected static ?string $navigationLabel = 'Jenis Biaya';
+
+     protected static ?string $breadcrumb = 'Jenis Biaya';
+
     protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

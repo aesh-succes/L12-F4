@@ -10,10 +10,13 @@ class EditPosition extends EditRecord
 {
     protected static string $resource = PositionResource::class;
 
+    protected static ?string $title = 'Ubah Jabatan Pekerjaan';
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->label('Hapus Jabatan Pekerjaan'),
         ];
     }
 }

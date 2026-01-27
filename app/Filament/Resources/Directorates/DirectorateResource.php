@@ -18,6 +18,10 @@ class DirectorateResource extends Resource
 {
     protected static ?string $model = Directorate::class;
 
+    protected static ?string $navigationLabel = 'Direktorat';
+
+    protected static ?string $breadcrumb = 'Direktorat';
+
     protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

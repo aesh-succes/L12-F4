@@ -14,6 +14,7 @@ class VehiclesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->emptyStateHeading('Belum ada data kendaraan')
             ->columns([
                 TextColumn::make('vehicle_type_id')
                     ->numeric()

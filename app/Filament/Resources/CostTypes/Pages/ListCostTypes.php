@@ -10,10 +10,12 @@ class ListCostTypes extends ListRecords
 {
     protected static string $resource = CostTypeResource::class;
 
+    protected static ?string $title = 'Daftar Jenis Biaya';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()->label('Tambah Jenis Biaya'),
         ];
     }
 }

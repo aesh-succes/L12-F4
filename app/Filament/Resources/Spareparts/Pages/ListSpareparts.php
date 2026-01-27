@@ -10,10 +10,13 @@ class ListSpareparts extends ListRecords
 {
     protected static string $resource = SparepartResource::class;
 
+    protected static ?string $title = 'Daftar Suku Cadang';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->label('Tambah Suku Cadang'),
         ];
     }
 }

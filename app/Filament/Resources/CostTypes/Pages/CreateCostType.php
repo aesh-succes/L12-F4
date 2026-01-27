@@ -8,4 +8,7 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateCostType extends CreateRecord
 {
     protected static string $resource = CostTypeResource::class;
+
+    protected static ?string $title = 'Tambah Jenis Biaya';
 }
+

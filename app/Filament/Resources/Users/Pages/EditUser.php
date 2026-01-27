@@ -10,10 +10,13 @@ class EditUser extends EditRecord
 {
     protected static string $resource = UserResource::class;
 
+    protected static ?string $title = 'Ubah Pengguna';
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->label('Hapus Pengguna'),
         ];
     }
 }

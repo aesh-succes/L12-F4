@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Filament\Resources\BrandResource\Schemas;
+namespace App\Filament\Resources\Brands\Schemas;
 
-use Filament\Forms;
+use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
 class BrandForm
 {
-    public static function schema(): array
+    public static function configure(Schema $schema): Schema
     {
-        return [
-            Forms\Components\TextInput::make('name')
-                ->label('Brand Name')
-                ->required()
-                ->maxLength(50),
-        ];
+        return $schema
+            ->components([
+                TextInput::make('name')
+                    ->required(),
+            ]);
     }
 }

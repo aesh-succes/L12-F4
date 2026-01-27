@@ -8,4 +8,6 @@ use Filament\Resources\Pages\CreateRecord;
 class CreatePosition extends CreateRecord
 {
     protected static string $resource = PositionResource::class;
+
+    protected static ?string $title = 'Tambah Jabatan Pekerjaan';
 }

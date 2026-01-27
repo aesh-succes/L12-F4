@@ -13,6 +13,7 @@ class DirectoratesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->emptyStateHeading('Belum ada data direktorat')
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),

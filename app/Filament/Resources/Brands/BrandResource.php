@@ -2,27 +2,53 @@
 
 namespace App\Filament\Resources\Brands;
 
-use App\Filament\Resources\Brands\BrandResource\Pages;
+use App\Filament\Resources\Brands\Pages\CreateBrand;
+use App\Filament\Resources\Brands\Pages\EditBrand;
+use App\Filament\Resources\Brands\Pages\ListBrands;
+use App\Filament\Resources\Brands\Schemas\BrandForm;
+use App\Filament\Resources\Brands\Tables\BrandsTable;
 use App\Models\Brand;
+use BackedEnum;
 use Filament\Resources\Resource;
+use Filament\Schemas\Schema;
+use Filament\Support\Icons\Heroicon;
+use Filament\Tables\Table;
 
 class BrandResource extends Resource
 {
     protected static ?string $model = Brand::class;
 
-    protected static ?string $navigationLabel = 'Brands';
+    protected static ?string $navigationLabel = 'Merk Kendaraan';
 
-    public static function getNavigationGroup(): ?string
+    protected static ?string $breadcrumb = 'Merk Kendaraan';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+
+    public static function form(Schema $schema): Schema
     {
-        return 'Master Data';
+        return BrandForm::configure($schema);
+    }
+
+    public static function table(Table $table): Table
+    {
+        return BrandsTable::configure($table);
+    }
+
+    public static function getRelations(): array
+    {
+        return [
+            //
+        ];
     }
 
     public static function getPages(): array
     {
         return [
-            'index'  => Pages\ListBrands::route('/'),
-            'create' => Pages\CreateBrand::route('/create'),
-            'edit'   => Pages\EditBrand::route('/{record}/edit'),
+            'index' => ListBrands::route('/'),
+            'create' => CreateBrand::route('/create'),
+            'edit' => EditBrand::route('/{record}/edit'),
         ];
     }
 }

@@ -10,10 +10,13 @@ class ListVehicles extends ListRecords
 {
     protected static string $resource = VehicleResource::class;
 
+    protected static ?string $title = 'Daftar Kendaraan';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->label('Tambah Kendaraan'),
         ];
     }
 }

@@ -8,4 +8,6 @@ use Filament\Resources\Pages\CreateRecord;
 class CreateDirectorate extends CreateRecord
 {
     protected static string $resource = DirectorateResource::class;
+
+    protected static ?string $title = 'Tambah Direktorat';
 }

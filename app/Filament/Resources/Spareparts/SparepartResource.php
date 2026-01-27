@@ -18,6 +18,10 @@ class SparepartResource extends Resource
 {
     protected static ?string $model = Sparepart::class;
 
+    protected static ?string $navigationLabel = 'Suku Cadang';
+
+    protected static ?string $breadcrumb = 'Suku Cadang';
+
     protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;

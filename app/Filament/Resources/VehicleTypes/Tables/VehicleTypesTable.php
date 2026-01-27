@@ -14,6 +14,7 @@ class VehicleTypesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->emptyStateHeading('Belum ada data jenis kendaraan')
             ->columns([
                 TextColumn::make('name')
                     ->searchable()

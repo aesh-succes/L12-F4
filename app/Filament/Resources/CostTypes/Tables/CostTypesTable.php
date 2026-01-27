@@ -13,6 +13,8 @@ class CostTypesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->emptyStateHeading('Belum ada data jenis biaya')
+            ->emptyStateDescription('Silakan tambahkan jenis biaya terlebih dahulu')
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),

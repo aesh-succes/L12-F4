@@ -10,10 +10,13 @@ class ListPositions extends ListRecords
 {
     protected static string $resource = PositionResource::class;
 
+    protected static ?string $title = 'Daftar Jabatan Pekerjaan';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->label('Tambah Jabatan Pekerjaan'),
         ];
     }
 }

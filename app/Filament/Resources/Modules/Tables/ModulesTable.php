@@ -13,6 +13,7 @@ class ModulesTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->emptyStateHeading('Belum ada data modul')
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),

@@ -18,8 +18,11 @@ class PositionResource extends Resource
 {
     protected static ?string $model = Position::class;
 
-    protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
+    protected static ?string $navigationLabel = 'Jabatan';
 
+    protected static ?string $breadcrumb = 'Jabatan';
+
+    protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 

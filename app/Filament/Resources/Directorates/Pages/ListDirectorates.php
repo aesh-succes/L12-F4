@@ -10,10 +10,13 @@ class ListDirectorates extends ListRecords
 {
     protected static string $resource = DirectorateResource::class;
 
+    protected static ?string $title = 'Daftar Direktorat';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->label('Tambah Direktorat'),
         ];
     }
 }

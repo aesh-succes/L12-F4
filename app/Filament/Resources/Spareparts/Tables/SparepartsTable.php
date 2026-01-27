@@ -13,6 +13,7 @@ class SparepartsTable
     public static function configure(Table $table): Table
     {
         return $table
+            ->emptyStateHeading('Belum ada data suku cadang')
             ->columns([
                 TextColumn::make('name')
                     ->searchable(),

@@ -10,10 +10,13 @@ class EditVehicleType extends EditRecord
 {
     protected static string $resource = VehicleTypeResource::class;
 
+    protected static ?string $title = 'Ubah Jenis Kendaraan';
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->label('Hapus Jenis Kendaraan'),
         ];
     }
 }

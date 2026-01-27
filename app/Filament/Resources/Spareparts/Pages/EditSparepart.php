@@ -10,10 +10,13 @@ class EditSparepart extends EditRecord
 {
     protected static string $resource = SparepartResource::class;
 
+    protected static ?string $title = 'Ubah Suku Cadang';
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->label('Hapus Suku Cadang'),
         ];
     }
 }
