@@ -18,13 +18,10 @@ class ModuleResource extends Resource
 {
     protected static ?string $model = Module::class;
 
-    protected static ?string $navigationLabel = 'Modul';
-
-    protected static ?string $breadcrumb = 'Modul';
-
     protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedPuzzlePiece;
+
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedCpuChip;
 
     protected static ?string $recordTitleAttribute = 'no';
 

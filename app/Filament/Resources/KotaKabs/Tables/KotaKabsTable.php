@@ -1,20 +1,21 @@
 <?php
 
-namespace App\Filament\Resources\Modules\Tables;
+namespace App\Filament\Resources\KotaKabs\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 
-class ModulesTable
+class KotaKabsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('nama_module')
+                TextColumn::make('kota_kab')
+                    ->sortable()
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

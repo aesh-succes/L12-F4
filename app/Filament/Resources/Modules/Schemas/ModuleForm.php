@@ -11,8 +11,7 @@ class ModuleForm
     {
         return $schema
             ->components([
-                TextInput::make('name')
-                    ->label('Modul Nama')
+                TextInput::make('nama_module')
                     ->required(),
             ]);
     }

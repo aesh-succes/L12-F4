@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Filament\Resources\Modules\Tables;
+namespace App\Filament\Resources\Jabatans\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\TextColumn;
 
-class ModulesTable
+class JabatansTable
 {
     public static function configure(Table $table): Table
     {
         return $table
             ->columns([
-                TextColumn::make('nama_module')
+                TextColumn::make('jabatan')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

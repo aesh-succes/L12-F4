@@ -2,14 +2,21 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Module extends Model
 {
-    protected $fillable = ['name'];
+    use HasFactory;
 
-    public function userModules()
-    {
-        return $this->hasMany(UserModule::class);
-    }
+    protected $fillable = [
+        'nama_module',
+    ];
+
+    public function admins()
+{
+    return $this->belongsToMany(Admin::class, 'admin_module')
+        ->withPivot('active')
+        ->withTimestamps();
+}
 }

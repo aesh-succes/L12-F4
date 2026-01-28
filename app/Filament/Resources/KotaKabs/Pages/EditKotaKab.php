@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Modules\Pages;
+namespace App\Filament\Resources\KotaKabs\Pages;
 
-use App\Filament\Resources\Modules\ModuleResource;
+use App\Filament\Resources\KotaKabs\KotaKabResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditModule extends EditRecord
+class EditKotaKab extends EditRecord
 {
-    protected static string $resource = ModuleResource::class;
+    protected static string $resource = KotaKabResource::class;
 
     protected function getHeaderActions(): array
     {
