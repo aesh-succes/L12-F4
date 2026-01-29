@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Modules\Tables;
+namespace App\Filament\Resources\CostTypes\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -8,15 +8,16 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class ModulesTable
+class CostTypesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
-            ->emptyStateHeading('Belum ada data modul')
+            ->emptyStateHeading('Belum ada data jenis biaya')
+            ->emptyStateDescription('Silakan tambahkan jenis biaya terlebih dahulu')
             ->columns([
                 TextColumn::make('name')
-                    ->label('Modul Nama')
+                    ->label('Biaya')
                     ->searchable(),
                 TextColumn::make('created_at')
                     ->dateTime()

@@ -10,10 +10,13 @@ class EditModule extends EditRecord
 {
     protected static string $resource = ModuleResource::class;
 
+    protected static ?string $title = 'Ubah Modul';
+
     protected function getHeaderActions(): array
     {
         return [
-            DeleteAction::make(),
+            DeleteAction::make()
+                ->label('Hapus Modul'),
         ];
     }
 }

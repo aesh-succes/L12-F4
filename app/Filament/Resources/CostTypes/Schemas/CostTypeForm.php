@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Filament\Resources\Modules\Schemas;
+namespace App\Filament\Resources\CostTypes\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
-class ModuleForm
+class CostTypeForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->label('Modul Nama')
+                    ->label('Biaya')
                     ->required(),
             ]);
     }

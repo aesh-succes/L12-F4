@@ -10,10 +10,13 @@ class ListModules extends ListRecords
 {
     protected static string $resource = ModuleResource::class;
 
+    protected static ?string $title = 'Daftar Modul';
+
     protected function getHeaderActions(): array
     {
         return [
-            CreateAction::make(),
+            CreateAction::make()
+                ->label('Tambah Modul'),
         ];
     }
 }

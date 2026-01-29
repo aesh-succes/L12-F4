@@ -1,23 +1,39 @@
 <?php
 
-namespace App\Filament\Resources\Modules\Tables;
+namespace App\Filament\Resources\Users\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
+use Filament\Tables\Columns\IconColumn;
 
-class ModulesTable
+class UsersTable
 {
     public static function configure(Table $table): Table
     {
         return $table
-            ->emptyStateHeading('Belum ada data modul')
+            ->emptyStateHeading('Belum ada data pengguna')
             ->columns([
                 TextColumn::make('name')
-                    ->label('Modul Nama')
+                    ->label('Nama')
                     ->searchable(),
+                TextColumn::make('email')
+                    ->label('Email address')
+                    ->searchable(),
+                TextColumn::make('email_verified_at')
+                    ->dateTime()
+                    ->sortable(),
+                    IconColumn::make('is_active')
+                ->boolean()
+                ->label('Active'),
+
+            TextColumn::make('last_login')
+                ->dateTime()
+                ->label('Last Login')
+                ->sortable(),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

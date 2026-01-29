@@ -1,19 +1,24 @@
 <?php
 
-namespace App\Filament\Resources\Modules\Schemas;
+namespace App\Filament\Resources\Spareparts\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
 
-class ModuleForm
+class SparepartForm
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
                 TextInput::make('name')
-                    ->label('Modul Nama')
+                    ->label('Suku Cadang')
                     ->required(),
+                TextInput::make('price')
+                    ->label('Harga')
+                    ->required()
+                    ->numeric()
+                    ->prefix('$'),
             ]);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\Modules\Tables;
+namespace App\Filament\Resources\Spareparts\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
@@ -8,16 +8,20 @@ use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class ModulesTable
+class SparepartsTable
 {
     public static function configure(Table $table): Table
     {
         return $table
-            ->emptyStateHeading('Belum ada data modul')
+            ->emptyStateHeading('Belum ada data suku cadang')
             ->columns([
                 TextColumn::make('name')
-                    ->label('Modul Nama')
+                    ->label('Suku Cadang')
                     ->searchable(),
+                TextColumn::make('price')
+                    ->label('Harga')
+                    ->money()
+                    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

@@ -1,34 +1,39 @@
 <?php
 
-namespace App\Filament\Resources\Modules\Tables;
+namespace App\Filament\Resources\VehicleTypes\Tables;
 
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 
-class ModulesTable
+class VehicleTypesTable
 {
     public static function configure(Table $table): Table
     {
         return $table
-            ->emptyStateHeading('Belum ada data modul')
+            ->emptyStateHeading('Belum ada data jenis kendaraan')
             ->columns([
                 TextColumn::make('name')
-                    ->label('Modul Nama')
-                    ->searchable(),
+                    ->label('Jenis Kendaraan')
+                    ->searchable()
+                    ->sortable(),
+
+                IconColumn::make('is_active')
+                    ->label('Aktif')
+                    ->boolean(),
+
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('updated_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
             ])
             ->recordActions([
                 EditAction::make(),

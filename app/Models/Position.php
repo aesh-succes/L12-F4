@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Module extends Model
+class Position extends Model
 {
     protected $fillable = ['name'];
 
-    public function userModules()
+    public function vehicles()
     {
-        return $this->hasMany(UserModule::class);
+        return $this->hasMany(Vehicle::class);
     }
 }
