@@ -20,11 +20,6 @@ class VehicleTypesTable
                     ->label('Jenis Kendaraan')
                     ->searchable()
                     ->sortable(),
-
-                IconColumn::make('is_active')
-                    ->label('Aktif')
-                    ->boolean(),
-
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

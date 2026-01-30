@@ -3,7 +3,6 @@
 namespace App\Filament\Resources\VehicleTypes\Schemas;
 
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class VehicleTypeForm
@@ -16,10 +15,6 @@ class VehicleTypeForm
                     ->label('Jenis Kendaraan')
                     ->required()
                     ->maxLength(255),
-
-                Toggle::make('is_active')
-                    ->label('Aktif')
-                    ->required(),
             ]);
     }
 }

@@ -49,17 +49,17 @@ class VehiclesTable
                 TextColumn::make('purchase_year')
                     ->label('Tahun Pembelian'),
                 TextColumn::make('acquisition_value')
-                    ->label('Nilai Perolehan')
-                    ->numeric()
+                    ->label('Nilai Perolehan (Rp)')
+                    ->money('IDR', locale: 'id')
                     ->sortable(),
                 TextColumn::make('stnk_due_date')
                     ->label('Tanggal Jatuh Tempo STNK')
                     ->date()
                     ->sortable(),
                 TextColumn::make('stnk_cost')
-                    ->label('Biaya Perpanjangan STNK')
-                    ->money()
-                    ->sortable(),
+    ->label('Biaya Perpanjangan STNK')
+    ->money('IDR', locale: 'id')
+    ->sortable(),
                 IconColumn::make('is_active')
                     ->label('Aktif')
                     ->boolean(),

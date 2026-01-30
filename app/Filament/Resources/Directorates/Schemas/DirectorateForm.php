@@ -12,17 +12,23 @@ class DirectorateForm
         return $schema
             ->components([
                 TextInput::make('name')
-                ->label('Direktorat')
+                    ->label('Direktorat')
                     ->required(),
+
                 TextInput::make('city_id')
-                    ->label('KotaKab')
-                    ->numeric(),
+                    ->label('Kota/Kab')
+                    ->nullable(),
+
                 TextInput::make('phone_number_1')
                     ->label('Nomor Telepon 1')
-                    ->numeric(),
+                    ->maxLength(20)
+                    ->nullable()
+                    ->helperText('Boleh angka, huruf, atau keterangan (contoh: WA Admin)'),
+
                 TextInput::make('phone_number_2')
                     ->label('Nomor Telepon 2')
-                    ->numeric(),
+                    ->maxLength(20)
+                    ->nullable(),
             ]);
     }
 }

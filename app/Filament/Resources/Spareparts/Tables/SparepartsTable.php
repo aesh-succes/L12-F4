@@ -18,10 +18,10 @@ class SparepartsTable
                 TextColumn::make('name')
                     ->label('Suku Cadang')
                     ->searchable(),
-                TextColumn::make('price')
-                    ->label('Harga')
-                    ->money()
-                    ->sortable(),
+               TextColumn::make('price')
+    ->label('Harga')
+    ->money('IDR', locale: 'id')
+    ->sortable(),
                 TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

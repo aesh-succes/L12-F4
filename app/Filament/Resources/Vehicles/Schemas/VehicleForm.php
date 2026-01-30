@@ -46,18 +46,20 @@ class VehicleForm
                 TextInput::make('purchase_year')
                     ->label('Tahun Pembelian')
                     ->required(),
-                TextInput::make('acquisition_value')
-                    ->label('Nilai Perolehan')
-                    ->required()
-                    ->numeric(),
+             TextInput::make('acquisition_value')
+    ->label('Nilai Perolehan (Rp)')
+    ->required()
+    ->numeric()
+    ->prefix('Rp'),
                 DatePicker::make('stnk_due_date')
                     ->label('Tanggal Jatuh Tempo STNK')
                     ->required(),
-                TextInput::make('stnk_cost')
-                    ->label('Biaya Perpanjangan STNK')
-                    ->required()
-                    ->numeric()
-                    ->prefix('$'),
+              TextInput::make('stnk_cost')
+    ->label('Biaya Perpanjangan STNK (Rp)')
+    ->required()
+    ->numeric()
+    ->prefix('Rp'),
+
                 Toggle::make('is_active')
                     ->label('Aktif')
                     ->default(true),

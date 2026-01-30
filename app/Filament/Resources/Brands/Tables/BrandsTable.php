@@ -16,7 +16,7 @@ class BrandsTable
             ->emptyStateHeading('Belum ada data merk kendaraan')
             ->emptyStateDescription('Silakan tambahkan merk kendaraan terlebih dahulu')
             ->columns([
-                TextColumn::make('merk')
+                TextColumn::make('name')
                     ->label('Merk Kendaraan')
                     ->searchable(),
                 TextColumn::make('created_at')
