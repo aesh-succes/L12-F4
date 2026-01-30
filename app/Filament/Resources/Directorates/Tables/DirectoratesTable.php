@@ -18,23 +18,26 @@ class DirectoratesTable
                 TextColumn::make('name')
                     ->label('Direktorat')
                     ->searchable(),
-                TextColumn::make('city_id')
-                    ->label('KotaKab')
-                    ->numeric()
-                    ->sortable(),
+
+                TextColumn::make('city.city_name')
+                    ->label('Kota/Kab')
+                    ->searchable()
+                    ->placeholder('-'),
+
                 TextColumn::make('phone_number_1')
-                    ->label('Nomor Telepon 1')
-                    ->numeric()
-                    ->sortable(),
+                    ->label('Nomor Telepon 1'),
+
                 TextColumn::make('phone_number_2')
-                    ->label('Nomor Telepon 2')
-                    ->numeric()
-                    ->sortable(),
+                    ->label('Nomor Telepon 2'),
+
                 TextColumn::make('created_at')
+                    ->label('Dibuat')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
+
                 TextColumn::make('updated_at')
+                    ->label('Diupdate')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),

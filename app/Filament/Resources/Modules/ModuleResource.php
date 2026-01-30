@@ -19,7 +19,8 @@ class ModuleResource extends Resource
     protected static ?string $model = Module::class;
 
     protected static ?string $navigationLabel = 'Modul';
-
+    protected static ?string $pluralLabel = 'Modul';
+    protected static ?string $label = 'Modul';
     protected static ?string $breadcrumb = 'Modul';
 
     protected static string|\UnitEnum|null $navigationGroup = 'Master Data';

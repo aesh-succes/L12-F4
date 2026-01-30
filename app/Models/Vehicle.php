@@ -4,9 +4,6 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-
-
-
 class Vehicle extends Model
 {
     protected $fillable = [
@@ -19,6 +16,9 @@ class Vehicle extends Model
         'position_id',
         'is_active',
     ];
+        /* ======================
+     | RELATIONSHIPS
+     |====================== */
 
     public function brand()
     {

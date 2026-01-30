@@ -19,10 +19,11 @@ class VehicleTypeResource extends Resource
     protected static ?string $model = VehicleType::class;
 
     protected static ?string $navigationLabel = 'Jenis Kendaraan';
-
+    protected static ?string $pluralLabel = 'Jenis Kendaraan';
+    protected static ?string $label = 'Jenis Kendaraan';
     protected static ?string $breadcrumb = 'Jenis Kendaraan';
 
-protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
+    protected static string|\UnitEnum|null $navigationGroup = 'Master Data';
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedSquares2x2;
 

@@ -18,7 +18,6 @@ class UserForm
                     ->label('Nama')
                     ->required(),
                 TextInput::make('email')
-                    ->label('Email address')
                     ->email()
                     ->required(),
                 DateTimePicker::make('email_verified_at'),
@@ -26,7 +25,7 @@ class UserForm
                     ->password()
                     ->required(),
                 Toggle::make('is_active')
-                ->label('Active')
+                ->label('Aktif')
                 ->default(true),
              FileUpload::make('signature_file')
                 ->label('File TTD')

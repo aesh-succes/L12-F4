@@ -4,6 +4,8 @@ namespace App\Filament\Resources\Directorates\Schemas;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Schemas\Schema;
+use Filament\Forms\Components\Select;
+
 
 class DirectorateForm
 {
@@ -15,9 +17,13 @@ class DirectorateForm
                     ->label('Direktorat')
                     ->required(),
 
-                TextInput::make('city_id')
-                    ->label('Kota/Kab')
-                    ->nullable(),
+
+Select::make('city_id')
+    ->label('Kota/Kab')
+    ->relationship('city', 'city_name') 
+    ->searchable()
+    ->preload()
+    ->required(),
 
                 TextInput::make('phone_number_1')
                     ->label('Nomor Telepon 1')
