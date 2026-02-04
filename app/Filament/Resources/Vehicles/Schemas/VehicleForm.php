@@ -2,10 +2,11 @@
 
 namespace App\Filament\Resources\Vehicles\Schemas;
 
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Select;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\Toggle;
 use Filament\Schemas\Schema;
 
 class VehicleForm
@@ -14,74 +15,130 @@ class VehicleForm
     {
         return $schema
             ->components([
+
+                /* =====================
+                 | DATA UTAMA KENDARAAN
+                 ===================== */
                 Select::make('vehicle_type_id')
                     ->label('Jenis Kendaraan')
                     ->relationship('vehicleType', 'name')
                     ->required(),
 
+                TextInput::make('license_plate')
+                    ->label('Nomor Polisi')
+                    ->required(),
+
+                TextInput::make('model')
+                    ->label('Tipe / Model')
+                    ->required(),
+
+                TextInput::make('purchase_year')
+                    ->label('Tahun Pembelian')
+                    ->numeric()
+                    ->required(),
+
+                TextInput::make('color')
+                    ->label('Warna'),
+
+                /* =====================
+                 | MERK & ORGANISASI
+                 ===================== */
                 Select::make('brand_id')
                     ->label('Merk')
                     ->relationship('brand', 'name')
                     ->required(),
 
                 Select::make('directorate_id')
-                    ->label('Direktorat')
+                    ->label('Biro Pemakai')
                     ->relationship('directorate', 'name')
                     ->required(),
 
                 Select::make('position_id')
-                    ->label('Jabatan')
+                    ->label('Pemakai / Jabatan')
                     ->relationship('position', 'name')
                     ->required(),
 
-                TextInput::make('license_plate')
-                    ->label('Nomor Polisi')
-                    ->required()
-                    ->helperText('Masukkan nomor polisi kendaraan'),
+                TextInput::make('user_phone')
+                    ->label('No. HP Pemakai')
+                    ->tel(),
+
+                /* =====================
+                 | IDENTITAS KENDARAAN
+                 ===================== */
+                TextInput::make('engine_number')
+                    ->label('Nomor Mesin')
+                    ->required(),
 
                 TextInput::make('chassis_number')
                     ->label('Nomor Rangka')
                     ->required(),
 
-                TextInput::make('engine_number')
-                    ->label('Nomor Mesin')
-                    ->required(),
+                /* =====================
+                 | DATA BAST
+                 ===================== */
+                TextInput::make('bast_number')
+                    ->label('Nomor BAST'),
 
-                TextInput::make('model')
-                    ->required(),
+                DatePicker::make('bast_date')
+                    ->label('Tanggal BAST'),
 
-                TextInput::make('color')
-                    ->label('Warna')
-                    ->required(),
-
-                TextInput::make('purchase_year')
-                    ->label('Tahun Pembelian')
-                    ->required()
-                    ->numeric(),
-
-                TextInput::make('acquisition_value')
-                    ->label('Nilai Perolehan (Rp)')
-                    ->required()
-                    ->numeric()
-                    ->prefix('Rp'),
-
+                /* =====================
+                 | STNK & NILAI
+                 ===================== */
                 DatePicker::make('stnk_due_date')
-                    ->label('Tanggal Jatuh Tempo STNK')
+                    ->label('Tanggal STNK')
                     ->required(),
+
+                DatePicker::make('stnk_5_year_due_date')
+                    ->label('Tanggal STNK 5 Tahunan'),
 
                 TextInput::make('stnk_cost')
-                    ->label('Biaya Perpanjangan STNK (Rp)')
-                    ->required()
+                    ->label('Biaya STNK')
                     ->numeric()
                     ->prefix('Rp'),
+
+                TextInput::make('stnk_5_year_cost')
+                    ->label('Biaya STNK 5 Tahunan')
+                    ->numeric()
+                    ->prefix('Rp'),
+
+                TextInput::make('acquisition_value')
+                    ->label('Nilai Perolehan')
+                    ->numeric()
+                    ->prefix('Rp')
+                    ->required(),
+
+                /* =====================
+                 | KONDISI
+                 ===================== */
+                TextInput::make('body_condition')
+                    ->label('Kondisi Body'),
+
+                TextInput::make('engine_condition')
+                    ->label('Kondisi Mesin'),
+
+                     /* =====================
+                 | CATATAN
+                 ===================== */
+                Textarea::make('memo')
+                    ->label('Memo')
+                    ->columnSpanFull(),
+
+                /* =====================
+                 | STATUS (TOGGLE)
+                 ===================== */
+                Toggle::make('has_kir')
+                    ->label('KIR'),
+
+                Toggle::make('has_insurance')
+                    ->label('Asuransi'),
+
+                Toggle::make('is_locked')
+                    ->label('Kunci'),
 
                 Toggle::make('is_active')
                     ->label('Aktif')
                     ->default(true),
-
-                Toggle::make('is_deleted')
-                    ->label('Dihapus')
-                    ->default(false),
             ]);
     }
 }

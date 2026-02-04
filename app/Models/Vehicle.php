@@ -7,15 +7,35 @@ use Illuminate\Database\Eloquent\Model;
 class Vehicle extends Model
 {
     protected $fillable = [
-        'name',
-        'plate_number',
-        'year',
-        'brand_id',
-        'vehicle_type_id',
-        'directorate_id',
-        'position_id',
-        'is_active',
-    ];
+    'vehicle_type_id',
+    'brand_id',
+    'directorate_id',
+    'position_id',
+    'license_plate',
+    'chassis_number',
+    'engine_number',
+    'model',
+    'color',
+    'purchase_year',
+    'acquisition_value',
+    'stnk_due_date',
+    'stnk_cost',
+    'stnk_5_year_due_date',
+    'stnk_5_year_cost',
+    'bast_number',
+    'bast_date',
+    'user_phone',
+    'body_condition',
+    'engine_condition',
+    'has_kir',
+    'has_insurance',
+    'is_locked',
+    'is_active',
+    'is_deleted',
+    'memo',
+];
+
+
         /* ======================
      | RELATIONSHIPS
      |====================== */
@@ -49,4 +69,5 @@ class Vehicle extends Model
     {
         return $this->hasMany(VehicleCost::class);
     }
+
 }
