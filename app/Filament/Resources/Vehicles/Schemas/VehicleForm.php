@@ -26,7 +26,8 @@ class VehicleForm
 
                 TextInput::make('license_plate')
                     ->label('Nomor Polisi')
-                    ->required(),
+                    ->required()
+                    ->unique(ignoreRecord: true),
 
                 TextInput::make('model')
                     ->label('Tipe / Model')
@@ -49,7 +50,7 @@ class VehicleForm
                     ->required(),
 
                 Select::make('directorate_id')
-                    ->label('Biro Pemakai')
+                    ->label('Biro')
                     ->relationship('directorate', 'name')
                     ->required(),
 
@@ -95,12 +96,14 @@ class VehicleForm
                 TextInput::make('stnk_cost')
                     ->label('Biaya STNK')
                     ->numeric()
-                    ->prefix('Rp'),
+                    ->prefix('Rp')
+                    ->required(),
 
                 TextInput::make('stnk_5_year_cost')
-                    ->label('Biaya STNK 5 Tahunan')
+                    ->label('Biaya STNK 5 Tahun')
                     ->numeric()
-                    ->prefix('Rp'),
+                    ->prefix('Rp')
+                     ->required(),
 
                 TextInput::make('acquisition_value')
                     ->label('Nilai Perolehan')
@@ -109,7 +112,7 @@ class VehicleForm
                     ->required(),
 
                 /* =====================
-                 | KONDISI
+                 | KONDISI KENDARAAN
                  ===================== */
                 TextInput::make('body_condition')
                     ->label('Kondisi Body'),
@@ -117,7 +120,7 @@ class VehicleForm
                 TextInput::make('engine_condition')
                     ->label('Kondisi Mesin'),
 
-                     /* =====================
+                /* =====================
                  | CATATAN
                  ===================== */
                 Textarea::make('memo')
@@ -125,7 +128,7 @@ class VehicleForm
                     ->columnSpanFull(),
 
                 /* =====================
-                 | STATUS (TOGGLE)
+                 | STATUS
                  ===================== */
                 Toggle::make('has_kir')
                     ->label('KIR'),
@@ -134,7 +137,7 @@ class VehicleForm
                     ->label('Asuransi'),
 
                 Toggle::make('is_locked')
-                    ->label('Kunci'),
+                    ->label('Terkunci'),
 
                 Toggle::make('is_active')
                     ->label('Aktif')

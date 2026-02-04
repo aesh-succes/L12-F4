@@ -15,9 +15,12 @@ class VehiclesTable
     {
         return $table
             ->columns([
+
+                /* IDENTITAS UTAMA */
                 TextColumn::make('license_plate')
                     ->label('No Polisi')
-                    ->searchable(),
+                    ->searchable()
+                    ->sortable(),
 
                 TextColumn::make('vehicleType.name')
                     ->label('Jenis Kendaraan')
@@ -28,24 +31,29 @@ class VehiclesTable
                     ->sortable(),
 
                 TextColumn::make('model')
-                    ->label('Type')
+                    ->label('Model')
                     ->searchable(),
 
                 TextColumn::make('purchase_year')
-                    ->label('Tahun'),
+                    ->label('Tahun')
+                    ->sortable(),
 
+                /* ORGANISASI */
                 TextColumn::make('directorate.name')
                     ->label('Biro')
                     ->sortable(),
 
                 TextColumn::make('position.name')
-                    ->label('Biro Pemakai')
+                    ->label('Pemakai')
                     ->sortable(),
 
+                /* STNK */
                 TextColumn::make('stnk_due_date')
                     ->label('STNK')
-                    ->date(),
+                    ->date()
+                    ->sortable(),
 
+                /* STATUS */
                 IconColumn::make('has_kir')
                     ->label('KIR')
                     ->boolean(),
@@ -54,17 +62,19 @@ class VehiclesTable
                     ->label('Asuransi')
                     ->boolean(),
 
-                IconColumn::make('is_active')
-                    ->label('Active')
+                IconColumn::make('is_locked')
+                    ->label('Terkunci')
                     ->boolean(),
 
+                IconColumn::make('is_active')
+                    ->label('Aktif')
+                    ->boolean(),
+
+                /* AUDIT */
                 TextColumn::make('created_at')
                     ->label('Dibuat')
                     ->dateTime()
                     ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
             ])
             ->recordActions([
                 EditAction::make(),
