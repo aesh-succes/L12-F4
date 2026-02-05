@@ -1,9 +1,16 @@
 <x-filament::page>
-    <form wire:submit.prevent="unlock" class="space-y-4 max-w-md">
+    <div class="max-w-md">
         {{ $this->form }}
 
-        <x-filament::button type="submit" color="success">
-            Buka Kunci
-        </x-filament::button>
-    </form>
+        <div style="margin-top: 30px;">
+            <x-filament::button
+                type="button"
+                wire:click="unlock"
+                color="success"
+                class="w-full"
+            >
+                Buka Kunci
+            </x-filament::button>
+        </div>
+    </div>
 </x-filament::page>

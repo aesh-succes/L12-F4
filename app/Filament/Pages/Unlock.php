@@ -15,6 +15,7 @@ class Unlock extends Page implements Forms\Contracts\HasForms
     protected static ?string $navigationLabel = 'Kunci';
     protected static ?string $title = 'Buka Kunci Data Kendaraan';
     protected static string|\BackedEnum|null $navigationIcon = 'heroicon-o-lock-open';
+    protected static string|\UnitEnum|null $navigationGroup = 'Kendaraan';
     protected static ?int $navigationSort = 2;
 
     protected string $view = 'filament.pages.unlock';

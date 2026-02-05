@@ -22,8 +22,9 @@ class VehicleResource extends Resource
     protected static ?string $pluralLabel = 'Kendaraan';
     protected static ?string $label = 'Kendaraan';
     protected static ?string $breadcrumb = 'Kendaraan';
-    /** ICON MENU */
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedTruck;
+        protected static string|\UnitEnum|null $navigationGroup = 'Kendaraan';
+
 
     /** URUTAN MENU */
     protected static ?int $navigationSort = 1;

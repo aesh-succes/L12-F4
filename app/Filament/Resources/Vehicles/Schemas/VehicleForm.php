@@ -33,9 +33,8 @@ class VehicleForm
                     ->label('Tipe / Model')
                     ->required(),
 
-                TextInput::make('purchase_year')
+                DatePicker::make('purchase_year')
                     ->label('Tahun Pembelian')
-                    ->numeric()
                     ->required(),
 
                 TextInput::make('color')
