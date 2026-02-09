@@ -16,5 +16,11 @@ class Deletion extends Model
         'input_by',
         'input_date',
     ];
+
+    public function vehicle()
+{
+    return $this->belongsTo(Vehicle::class);
+}
+
 }
 

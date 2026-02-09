@@ -14,22 +14,30 @@ class DeletionsTable
     {
         return $table
             ->columns([
-                TextColumn::make('vehicle_id')
-                    ->label('Kendaraan')
-                    ->numeric()
-                    ->sortable(),
+
+               TextColumn::make('vehicle_id')
+    ->label('Kendaraan')
+    ->formatStateUsing(fn ($state, $record) =>
+        $record->vehicle?->license_plate ?? '-'
+    )
+    ->description(fn ($record) =>
+        $record->vehicle?->vehicleType?->name
+    )
+    ->searchable()
+    ->sortable(),
+
+
                 TextColumn::make('deleted_at_date')
                     ->label('Tgl Penghapusan')
-                    ->dateTime()
+                    ->date()
                     ->sortable(),
+
                 TextColumn::make('sk_number')
                     ->label('No SK')
                     ->searchable(),
-              TextColumn::make('memo')
-                    ->columnSpanFull(),
-            ])
-            ->filters([
-                //
+                TextColumn::make('memo')
+                    ->label('Memo')
+                    ->wrap(),
             ])
             ->recordActions([
                 EditAction::make(),
