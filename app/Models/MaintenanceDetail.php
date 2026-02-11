@@ -7,11 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class MaintenanceDetail extends Model
 {
     protected $fillable = [
-        'maintenance_id',
-        'spare_part_id',
-        'qty',
-        'price',
-    ];
+    'maintenance_id',
+    'spare_part_id',
+    'quantity',
+    'price',
+    'total',
+];
 
     public function maintenance()
     {
