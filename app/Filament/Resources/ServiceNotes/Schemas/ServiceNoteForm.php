@@ -16,9 +16,11 @@ class ServiceNoteForm
     {
         return $schema
             ->components([
-               Select::make('vehicle_id')
+             Select::make('vehicle_id')
     ->label('Kendaraan')
-    ->relationship('vehicle', 'license_plate')
+    ->options(
+        \App\Models\Vehicle::pluck('license_plate', 'id')->toArray()
+    )
     ->searchable()
     ->required(),
 
