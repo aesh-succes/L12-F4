@@ -28,7 +28,7 @@ class MaintenanceResource extends Resource
 
     protected static string|\UnitEnum|null $navigationGroup = 'Service';
 
-protected static string | \BackedEnum | null $navigationIcon = 'heroicon-o-wrench-screwdriver';
+protected static string |\BackedEnum | null $navigationIcon = 'heroicon-o-eye';
 
     public static function table(Table $table): Table
 {
