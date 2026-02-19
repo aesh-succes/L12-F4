@@ -11,6 +11,7 @@ use Filament\Forms\Components\Textarea;
 use App\Models\Vehicle;
 use Filament\Schemas\Schema;
 
+
 class ServiceForm
 {
     public static function configure(Schema $schema): Schema
@@ -18,12 +19,13 @@ class ServiceForm
         return $schema
             ->components([
 
-                Select::make('vehicle_id')
+               Select::make('vehicle_id')
     ->label('Kendaraan')
     ->options(
-        Vehicle::all()->pluck('license_plate', 'id')
+        Vehicle::pluck('license_plate', 'id')
     )
     ->searchable()
+    ->preload()
     ->required(),
 
                 DatePicker::make('service_date')

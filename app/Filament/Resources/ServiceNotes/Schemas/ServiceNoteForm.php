@@ -9,6 +9,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Forms\Components\CheckboxList;
 use Filament\Schemas\Schema;
+use App\Models\Vehicle;
 
 class ServiceNoteForm
 {
@@ -16,13 +17,15 @@ class ServiceNoteForm
     {
         return $schema
             ->components([
-             Select::make('vehicle_id')
+            Select::make('vehicle_id')
     ->label('Kendaraan')
     ->options(
-        \App\Models\Vehicle::pluck('license_plate', 'id')->toArray()
+        Vehicle::pluck('license_plate', 'id')
     )
     ->searchable()
+    ->preload()
     ->required(),
+
 
 DatePicker::make('date')
     ->label('Tanggal')

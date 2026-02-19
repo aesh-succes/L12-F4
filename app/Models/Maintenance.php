@@ -10,19 +10,9 @@ class Maintenance extends Model
         'vehicle_id',
         'service_date',
         'mileage',
-        'cost',
-        'issue_description',
+        'total_cost',
+        'next_service_date',
     ];
-
-    protected static function booted()
-    {
-        static::saved(function ($maintenance) {
-            $maintenance->updateQuietly([
-                'cost' => $maintenance->details
-                    ->sum(fn ($d) => $d->quantity * $d->price),
-            ]);
-        });
-    }
 
     public function vehicle()
     {

@@ -21,7 +21,6 @@ return new class extends Migration
     $table->date('service_date');
     $table->integer('mileage')->nullable();
     $table->decimal('cost', 15, 2);
-    $table->text('issue_description')->nullable();
 
     $table->timestamps();
 });

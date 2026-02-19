@@ -1,6 +1,5 @@
 <?php
 
-
 namespace App\Filament\Resources\Maintenances\Pages;
 
 use App\Filament\Resources\Maintenances\MaintenanceResource;
@@ -12,6 +11,6 @@ class ListMaintenances extends ListRecords
 
     protected function getHeaderActions(): array
     {
-        return []; // tidak ada tombol create
+        return [];
     }
 }
