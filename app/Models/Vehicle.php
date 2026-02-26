@@ -75,4 +75,5 @@ class Vehicle extends Model
     {
         return $this->hasMany(VehicleCost::class);
     }
+   
 }
