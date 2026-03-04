@@ -4,9 +4,7 @@
         <div class="col-span-1 space-y-4">
             {{ $this->form }}
 
-            <x-filament::button
-                wire:click="$refresh"
-            >
+            <x-filament::button wire:click="$refresh">
                 Search
             </x-filament::button>
         </div>
