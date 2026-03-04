@@ -3,6 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\GpsLog;
+use App\Models\Brand;
+use App\Models\VehicleType;
+use App\Models\Directorate;
+use App\Models\Position;
+use App\Models\Maintenance;
+use App\Models\VehicleCost;
 
 class Vehicle extends Model
 {
