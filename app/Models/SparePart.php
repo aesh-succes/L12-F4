@@ -12,4 +12,12 @@ class SparePart extends Model
     {
         return $this->hasMany(MaintenanceDetail::class);
     }
+    public function serviceNotes()
+{
+    return $this->belongsToMany(
+        ServiceNote::class,
+        'service_note_details'
+    );
+}
+
 }

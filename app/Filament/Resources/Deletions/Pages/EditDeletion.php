@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Filament\Resources\Vehicles\Pages;
+namespace App\Filament\Resources\Deletions\Pages;
 
-use App\Filament\Resources\Vehicles\VehicleResource;
+use App\Filament\Resources\Deletions\DeletionResource;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditVehicle extends EditRecord
+class EditDeletion extends EditRecord
 {
-    protected static string $resource = VehicleResource::class;
+    protected static string $resource = DeletionResource::class;
 
     protected function getHeaderActions(): array
     {

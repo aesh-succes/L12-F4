@@ -3,20 +3,53 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\GpsLog;
+use App\Models\Brand;
+use App\Models\VehicleType;
+use App\Models\Directorate;
+use App\Models\Position;
+use App\Models\Maintenance;
+use App\Models\VehicleCost;
 
 class Vehicle extends Model
 {
     protected $fillable = [
-        'name',
-        'plate_number',
-        'year',
-        'brand_id',
         'vehicle_type_id',
+        'brand_id',
         'directorate_id',
         'position_id',
+
+        'license_plate',
+        'chassis_number',
+        'engine_number',
+        'model',
+        'color',
+        'purchase_year',
+
+        'acquisition_value',
+
+        'stnk_due_date',
+        'stnk_cost',
+        'stnk_5_year_due_date',
+        'stnk_5_year_cost',
+
+        'bast_number',
+        'bast_date',
+
+        'user_phone',
+
+        'body_condition',
+        'engine_condition',
+
+        'memo',
+
+        'has_kir',
+        'has_insurance',
+        'is_locked',
         'is_active',
     ];
-        /* ======================
+
+    /* ======================
      | RELATIONSHIPS
      |====================== */
 
