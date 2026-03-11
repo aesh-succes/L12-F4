@@ -1,17 +1,15 @@
 <x-filament-panels::page>
-    <div class="grid grid-cols-4 gap-6">
-
-        <div class="col-span-1 space-y-4">
-            {{ $this->form }}
-
-            <x-filament::button wire:click="$refresh">
+    <form wire:submit="submit">
+        {{ $this->form }}
+        
+        <div class="mt-4 flex justify-start">
+            <x-filament::button type="submit" color="warning">
                 Search
             </x-filament::button>
         </div>
+    </form>
 
-        <div class="col-span-3">
-            {{ $this->table }}
-        </div>
-
+    <div class="mt-8">
+        {{ $this->table }}
     </div>
 </x-filament-panels::page>
