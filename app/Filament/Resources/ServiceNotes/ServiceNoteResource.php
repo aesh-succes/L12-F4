@@ -13,6 +13,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
 use Filament\Tables\Table;
+use Filament\Navigation\NavigationItem;
 
 class ServiceNoteResource extends Resource
 {
@@ -24,6 +25,7 @@ class ServiceNoteResource extends Resource
     protected static ?string $breadcrumb = 'Nota Dinas';
 
         protected static string|\UnitEnum|null $navigationGroup = 'Service';
+
 
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentList;
@@ -44,7 +46,18 @@ class ServiceNoteResource extends Resource
             //
         ];
     }
+public static function getNavigationItems(): array
+{
+    return [
+        ...parent::getNavigationItems(),
 
+        NavigationItem::make('Nota Dinas')
+            ->group('Nota Dinas')
+            ->icon('heroicon-o-clipboard-document-list')
+            ->url(static::getUrl())
+            ->sort(1),
+    ];
+}
     public static function getPages(): array
     {
         return [
